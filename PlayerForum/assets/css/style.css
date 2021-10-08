@@ -2,6 +2,7 @@
 body {
     background-color: #191919;
     color: #fff;
+    font-family: 'NanumSquare';
 }
 .container {
     max-width: 1400px;
@@ -76,8 +77,8 @@ body {
     font-size: 20px;
 }
 .agree-wrap {
-    padding: 37px 0;
     position: relative;
+    margin-top: 100px;
 }
 .agree-wrap .agree-box {
     position: absolute;
@@ -93,22 +94,28 @@ body {
     text-align: center;
     margin-top: 60px;
     font-weight: 700;
-    margin-bottom: 55px;
+    margin-bottom: 60px;
 }
 .agree-wrap .agree-box .box-wrap {
     padding: 65px 0;
 }
 
 /*checkbox1*/
-.agree-box .checkbox1 {}
+.agree-box .checkbox1 {
+    position: relative;
+}
 .agree-box .checkbox1 span {
     font-size: 15px;
     margin-left: 100px;
 }
-.agree-box .checkbox1 .agree1 {}
+.agree-box .checkbox1 .agree1 {
+    margin-left: 10px;
+    top: 3px;
+    position: absolute;
+}
 .agree-box .terms-wrap {
     position: relative;
-    
+    margin-bottom: 40px;
 }
 .agree-box .terms-wrap .terms-box1 {
     position: absolute;
@@ -127,12 +134,18 @@ body {
 
 
 /*checkbox2*/
-.agree-box .checkbox2 {}
+.agree-box .checkbox2 {
+    position: relative;
+}
 .agree-box .checkbox2 span {
     font-size: 15px;
     margin-left: 100px;
 }
-.agree-box .checkbox2 .agree1 {}
+.agree-box .checkbox2 .agree1 {
+    margin-left: 10px;
+    top: 3px;
+    position: absolute;
+}
 .agree-box .terms-wrap {
     position: relative;
     
@@ -155,12 +168,18 @@ body {
 
 
 /*checkbox3*/
-.agree-box .checkbox3 {}
+.agree-box .checkbox3 {
+    position: relative;
+}
 .agree-box .checkbox3 span {
     font-size: 15px;
     margin-left: 100px;
 }
-.agree-box .checkbox3 .agree1 {}
+.agree-box .checkbox3 .agree1 {
+    margin-left: 10px;
+    top: 3px;
+    position: absolute;
+}
 .agree-box .terms-wrap {
     position: relative;
     
@@ -181,15 +200,40 @@ body {
 .agree-box .terms-wrap .terms-box3 .terms-inner p {}
 
 .btn-wrap {
+    font-family: 'NanumSquare';
     color: #fff;
+    margin-top: 70px;
+    padding: 0 30px 0px 100px;
 }
 .btn-wrap .prev {
-    width: 225px;
+    width: 230px;
     height: 50px;
-    padding: 18px 104px 19px;
+    margin: 0px 20px 0px 0px;
+    padding: 15px 80px;
     border-radius: 5px;
     background-color: #2d3035;
+    display: inline-block;
 }
-.btn-wrap .prev a{}
-.btn-wrap .agreement {}
-.btn-wrap .agreement a {}
+.btn-wrap .prev a {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+}
+.btn-wrap .agreement {
+    width: 230px;
+    height: 50px;
+    text-align: center;
+    margin: 0px 40px 30px 20px;
+    padding: 15px 80px;
+    border-radius: 5px;
+    background-color: #a92323;
+    display: inline-block;
+}
+.btn-wrap .agreement a {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+}
