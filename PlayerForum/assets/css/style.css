@@ -115,7 +115,7 @@ body {
 }
 .agree-box .terms-wrap {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 .agree-box .terms-wrap .terms-box1 {
     position: absolute;
@@ -236,4 +236,42 @@ body {
     font-size: 15px;
     line-height: 1;
     font-weight: 700;
+}
+
+/* boardType */
+.boardType {
+    margin: 0 auto;
+    width: 1400px;
+    margin-top: 150px;
+}
+.boardType h3 {
+    font-size: 45px;
+    margin-top: 20px;
+}
+
+/* board-write */
+.board-write {
+    padding: 10px 0 100px;
+}
+.board-write h2 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.board-write .title-text {
+    width: 100%;
+    display: block;
+    border: 1px solid #eee;
+    padding: 13px;
+    margin-bottom: 20px;
+    resize: none;
+    background: #191919;
+    border-radius: 5px;
+    color: #fff;
+}
+.board-write .board-btn {
+    float: right;
+    border-radius: 5px;
+    background-color: #2d3035;
+    color: #fff;
+    padding: 10px 40px;
 }
