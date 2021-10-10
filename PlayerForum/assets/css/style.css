@@ -246,7 +246,7 @@ body {
 }
 .boardType h3 {
     font-size: 45px;
-    margin-top: 20px;
+    padding-bottom: 30px;
 }
 
 /* board-write */
@@ -267,6 +267,13 @@ body {
     background: #191919;
     border-radius: 5px;
     color: #fff;
+}
+.board-write .image-btn {
+    float: left;
+    border-radius: 5px;
+    background-color: #2d3035;
+    color: #fff;
+    padding: 10px 30px;
 }
 .board-write .board-btn {
     float: right;
