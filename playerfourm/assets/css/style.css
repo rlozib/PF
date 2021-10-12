@@ -1,0 +1,774 @@
+body {
+    background-color: #191919;
+    color: #fff;
+    position: relative;
+}
+/* 헤더영역 by은지 */
+#header {
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: #191919;
+    border-bottom: 1px solid #fff;
+    /* box-shadow: 0px 5px 10px 2px rgb(0 0 0 / 10%); */
+}
+
+.header-wrap {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    /* position: relative; */
+}
+.header-wrap .logoWrap {
+    position: relative;
+}
+.header-wrap .logoWrap .logo {
+    background: url(../img/PFlogo.png) no-repeat center;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 2%;
+    width: 92px;
+    height: 70px;
+    z-index: 5;
+}
+.header-wrap .logoWrap a {
+    position: absolute;
+    line-height: 90px;
+    display: block;
+    height: 40px;
+    color: #fff;
+    top: 7px;
+    left: 7%;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.menu-wrap {
+   position: relative;
+}
+
+.menu ul {
+    position: absolute;
+    left: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20%;
+}
+
+.menu li a {
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    right: 2%;
+    top: 0;
+    padding: 0 16px;
+}
+.sign {
+    position: absolute;
+    right: 2%; 
+    top: 0;
+}
+.sign a {
+    color: #fff;
+    font-size: 18px;
+    margin-left: 10px;
+}
+/* 로딩 */
+#loading { 
+    width: 100%; 
+    top: 0px; left: 0px;
+    height: 100%;
+    position: fixed; 
+    display: block; 
+    opacity: 1; 
+    z-index: 99; 
+    text-align: center;
+    background-color:#000;
+    overflow:hidden;
+}
+#loading-image { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100; 
+}
+#loading .wrap {
+    height: 100%;
+    position:relative;
+    margin:0 auto;
+    width:60%;
+    display:block;
+}
+
+#loading #template {
+    stroke-width: 1px;
+    stroke:#FFF;
+    fill:#CC3636;
+}
+
+#loading .blue {
+    fill:#CC3636;
+    stroke:#FFF;
+}
+
+#loading #cannon-fill {
+    opacity:0;
+}
+
+#loading .text {
+    opacity:0;
+}
+
+/* foorter by 재연 */
+footer {
+    position: absolute; 
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 100px;
+    border-top: 1px solid #fff;
+    box-sizing: border-box;
+    background-color: #191919;
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-inner {
+    width: 1400px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer .footer-inner #sns {
+    width: 216px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 45px;
+}
+
+footer .footer-inner #sns .sns {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+}
+
+footer .footer-inner .copyright {
+    font-family: 'NanumSquare';
+    font-size: 11px;
+    font-weight: 400;
+    color: #fff;
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+}
+/* skip */
+#skip {
+    position: relative;
+    z-index: 10000;
+}
+#skip a {
+    position: absolute;
+    left: 0; top: -100px;
+    background: #000;
+    color: #fff;
+    padding: 20px 30px;
+    display: inline-block;
+}
+#skip a:active,
+#skip a:focus {
+    top: 0;
+}
+
+/* layout */
+#contents {
+    margin: 0 auto;
+}
+
+#mainCont {
+    margin: 0 auto;
+    padding: 100px 0;
+}
+/* container */
+.content-article {
+    width: 1200px;
+    margin: 0 auto;
+}
+.content-article .content-title {
+    margin-top: 50px;
+    font-size: 47px;
+}
+/* ---------------------------------------------------- 메인 ----------------------------------------------------*/
+.main-banner-img {
+    width: 100%;
+    background: url(../img/main-banner.jpg) no-repeat;
+    height: 700px;
+    background-size: cover;
+ } 
+.mainCont {
+    width: 100%;
+}
+.mainCont .main-banner{
+    position: relative;
+    height: 100px;
+}
+.mainCont .main-banner .img{
+}
+.mainCont .main-banner .main-info-wrap {
+    width: 100%;
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.mainCont .main-banner .main-info-wrap .main-team-table{
+    width: 30%;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #2D3035;
+}
+.mainCont .main-banner .main-info-wrap .main-match-result{
+    width: 70%;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #2D3035;
+
+}
+.team-Schedule {
+    width: 100%;
+    height: 500px;
+}
+/* ---------------------------------------------------- 메인 ----------------------------------------------------*/
+/* ---------------------------------------------------- 로그인 ----------------------------------------------------*/
+.login {
+    position: relative;
+    background-color: #191919;
+    text-align: center;
+}
+.login .login-inner {
+    display: inline-block;
+    width: 1400px;
+    padding: 106px 0;
+    text-align: center;
+}
+.login .login-window {
+    font-family: 'NanumSquare';
+    display: inline-block;
+    padding: 110px;
+    background-color: #000000;
+    text-align: center;
+    color: #fff;
+}
+.login .login-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.login .login-desc {
+    font-size: 20px;
+    font-weight: normal;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.login .login-id-title,
+.login .login-password-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.login .login-id-input,
+.login .login-password-input {
+    display: inline-block;
+    width: 526px;
+    background-color: #262626;
+    height: 60px;
+    border-style: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.login .login-btn {
+    display: inline-block;
+    width: 526px;
+    height: 60px;
+    background-color: #a92323;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    margin: 30px 0 20px 0;
+}
+.login .signin-desc {
+    font-size: 20px;
+    font-weight: normal;
+    margin-right: 10px;
+}
+.login .signin-btn {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: underline;
+}
+/* ---------------------------------------------------- 로그인 ---------------------------------------------------- */
+
+
+/* ---------------------------------------------------- 약관동의 ---------------------------------------------------- */
+.agree-wrap {
+    margin: 100px 0;
+    width: 100%;
+}
+.agree-wrap .agree-box {
+    background: #000;
+    width: 700px;
+    height: 900px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+.agree-wrap .agree-box h2 {
+    font-size: 35px;
+    width: 100%;
+    margin-top: 60px;
+    text-align: center;
+    font-weight: 700;
+    display: inline-block; 
+}
+.agree-wrap .agree-box .box-wrap {
+    padding: 65px 0;
+}
+/*checkbox1*/
+.agree-box .checkbox1 {
+    position: relative;
+}
+.agree-box .checkbox1 span {
+    font-size: 15px;
+    margin-left: 100px;
+}
+.agree-box .checkbox1 .agree1 {
+    margin-left: 10px;
+    top: 3px;
+    position: absolute;
+}
+.agree-box .terms-wrap {
+    position: relative;
+    margin-bottom: 40px;
+}
+.agree-box .terms-wrap .terms-box {
+    position: absolute;
+    left: 13%; 
+    padding: 20px;
+    margin: 10px;
+    width: 500px;
+    height: 10vh;
+    overflow-y: scroll;
+    background-color: #262626;
+    border-radius: 5px;
+}
+
+.agree-box .terms-wrap .terms-box1 .terms-inner {}
+.agree-box .terms-wrap .terms-box .terms-inner p {
+    font-size: 14px;
+}
+
+
+/*checkbox2*/
+.agree-box .checkbox2 {
+    position: relative;
+}
+.agree-box .checkbox2 span {
+    font-size: 15px;
+    margin-left: 100px;
+}
+.agree-box .checkbox2 .agree1 {
+    margin-left: 10px;
+    top: 3px;
+    position: absolute;
+}
+.agree-box .terms-wrap {
+    position: relative;
+    
+}
+
+.agree-box .terms-wrap .terms-box2 .terms-inner {}
+.agree-box .terms-wrap .terms-box2 .terms-inner p {}
+
+
+
+/*checkbox3*/
+.agree-box .checkbox3 {
+    position: relative;
+}
+.agree-box .checkbox3 span {
+    font-size: 15px;
+    margin-left: 100px;
+}
+.agree-box .checkbox3 .agree1 {
+    margin-left: 10px;
+    top: 3px;
+    position: absolute;
+}
+.agree-box .terms-wrap {
+    position: relative;
+    
+}
+
+.agree-box .terms-wrap .terms-box3 .terms-inner {}
+.agree-box .terms-wrap .terms-box3 .terms-inner p {}
+
+.btn-wrap {
+    font-family: 'NanumSquare';
+    color: #fff;
+    margin-top: 70px;
+    padding: 0 30px 0px 100px;
+}
+.btn-wrap .prev {
+    width: 230px;
+    height: 50px;
+    margin: 0px 20px 0px 0px;
+    padding: 15px 80px;
+    border-radius: 5px;
+    background-color: #2d3035;
+    display: inline-block;
+}
+.btn-wrap .prev a {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+}
+.btn-wrap .agreement {
+    width: 230px;
+    height: 50px;
+    text-align: center;
+    margin: 0px 40px 30px 20px;
+    padding: 15px 80px;
+    border-radius: 5px;
+    background-color: #a92323;
+    display: inline-block;
+}
+.btn-wrap .agreement a {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+}
+/* ---------------------------------------------------- 약관동의 ---------------------------------------------------- */
+/* ---------------------------------------------------- 회원가입 ---------------------------------------------------- */
+.signin {
+    position: relative;
+    background-color: #191919;
+    width: 100%;
+    margin: 100px 0;
+}
+.signin .signin-inner {
+    width: 800px;
+    margin: 0 auto;
+}
+.signin .signin-window {
+    width: 800px;
+    font-family: 'NanumSquare';
+    display: inline-block;
+    padding: 90px;
+    border-radius: 10px;
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+}
+.signin .signin-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.signin .signin-desc {
+    font-size: 20px;
+    font-weight: normal;
+    display: block;
+    margin-bottom: 50px;
+}
+
+.signin .signin-email-title,
+.signin .signin-password-title,
+.signin-password-confirm-title,
+.signin-name-title,
+.signin-birthday-title {
+    font-size: 20px;
+    margin-left: 45px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.signin .signin-email-input,
+.signin .signin-password-input,
+.signin-password-confirm-input,
+.signin-name-input,
+.signin-birthday-input {
+    display: inline-block;
+    width: 526px;
+    background-color: #262626;
+    height: 60px;
+    border-style: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.sign-btn {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.signin .signin-cancel-btn {
+    display: inline-block;
+    width: 198px;
+    height: 60px;
+    background-color: #2d3035;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.signin .signin-btn {
+    display: inline-block;
+    width: 308px;
+    height: 60px;
+    background-color: #a92323;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+}
+/* ---------------------------------------------------- 회원가입 ---------------------------------------------------- */
+/* ---------------------------------------------------- 보드타입 ---------------------------------------------------- */
+.board {}
+.board-search {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
+}
+.board-search .form-search {
+    border: 1px solid #fff;
+    border-radius:  5px;
+    padding: 7px 20px;
+}
+.board-search .form-select {
+    border: 1px solid #fff;
+    border-radius:  5px;
+    padding: 8px 20px;
+    background-color: #fff;
+}
+.board-search .form-btn  {
+    border: 1px solid #fff;
+    border-radius:  5px;
+    padding: 8px 20px;
+}
+.board-search .form-btn.black  {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+}
+.th-wrap {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    display: flex;
+    color: #fff;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    text-align: center;
+}
+.th-wrap .col1{
+    width: 5%;
+}
+.th-wrap .col2{
+    width: 65%;
+}
+.th-wrap .col3{
+    width: 10%;
+}
+.th-wrap .col4{
+    width: 10%;
+}
+.th-wrap .col5{
+    width: 10%;
+}
+.board-table {
+    color: #fff;
+}
+.board-table table{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    border-collapse: collapse
+}
+.board-table table th {
+    font-weight: normal;
+}
+.board-table table td a {
+    color: #fff;
+}
+.board-table table th,
+.board-table table td {
+    border-bottom: 1px solid #fff;
+    padding: 10px;
+}
+.board-table table .height {
+}
+
+.board-table table .left {
+}
+/* ---------------------------------------------------- 보드타입 ---------------------------------------------------- */
+/* ---------------------------------------------------- 보드 작성글 ---------------------------------------------------- */
+
+.board .board-haed{
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    gap: 20px
+}
+.board .board-info {
+    margin-bottom: 120px;
+}
+.board .board-info .img {
+    /* margin: 50px 0; */
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+.board .board-info .img img {
+    margin-top: 40px;
+}
+.board .board-info p {
+    /* padding: 20px; */
+    margin: 20px 0 20px;
+    font-size: 18px;
+}
+.board .board-info .desc.height {
+    overflow: hidden;
+    height: auto;
+}
+.board .board-info .btn {
+    float: right;
+}
+.board .board-info .btn a{
+    background: #2d3035;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 25px;
+    margin-top: 20px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.board-page {
+    margin-top: 50px;
+
+}
+.board-page ul {
+    display: flex;
+    justify-content: center;
+}
+.board-page li a {
+    display: block;
+    padding: 13px 10px;
+    margin-right: -1px;
+    color: #fff;
+}
+.board-page li.active a {
+    background-color: #000;
+    border-radius: 5px;
+}
+.board-write {
+    padding: 50px 0 100px ;
+}
+.board-write label {
+    width: 100%;
+    display: block;
+    padding-bottom: 10px;
+}
+.board-write .title-text {
+    width: 100%;
+    display: block;
+    border: 1px solid #eee;
+    padding: 13px;
+    margin-bottom: 20px;
+    resize: none;
+}
+.board-write .board-btn {
+    float: right;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 30px;
+}
+/* ---------------------------------------------------- 보드 작성글 ---------------------------------------------------- */
+/* ---------------------------------------------------- 보드 글쓰기 ---------------------------------------------------- */
+/* boardType */
+.boardType {
+    margin: 0 auto;
+    width: 100%;
+}
+.boardType h3 {
+    font-size: 45px;
+    padding-bottom: 30px;
+}
+
+/* board-write */
+.board-write {
+    padding: 10px 0 100px;
+}
+.board-write h2 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.board-write .title-text {
+    width: 100%;
+    display: block;
+    border: 1px solid #eee;
+    padding: 13px;
+    margin-bottom: 20px;
+    resize: none;
+    background: #191919;
+    border-radius: 5px;
+    color: #fff;
+}
+.board-write .image-btn {
+    float: left;
+    border-radius: 5px;
+    background-color: #2d3035;
+    color: #fff;
+    padding: 10px 30px;
+}
+.board-write .board-btn {
+    float: right;
+    border-radius: 5px;
+    background-color: #2d3035;
+    color: #fff;
+    padding: 10px 40px;
+}
+/* ---------------------------------------------------- 보드 글쓰기 ---------------------------------------------------- */
+/* ---------------------------------------------------- 보드 글보기 ---------------------------------------------------- */
+.board .board-haed .board-writer {}
+.board .board-haed .board-date {}
+.board .board-haed .board-view {}
+.board .board-info {}
+.board .board-info .desc {}
+.board .board-info .height {} 
+/* ---------------------------------------------------- 보드 글보기 ---------------------------------------------------- */
