@@ -44,16 +44,16 @@
                                 <div>
                                     <div>
                                         <label name="youEmail" class="login-id-title">아이디</label>
-                                        <input class="login-id-input" name="youEmail" id="youEmail" type="email" placeholder="Sample@naver.com" autocomplete="off" autofocus required>
+                                        <input class="login-id-input" name="youEmail" id="youEmail" type="email" autocomplete="off" autofocus required>
                                     </div>
                                     <div>
                                         <label for="youPass" class="login-password-title">비밀번호</label>
-                                        <input type="password" name="youPass" id="youPass" class="login-password-input" maxlength="20" placeholder="비밀번호를 적어주세요!" autocomplete="off" required>
+                                        <input type="password" name="youPass" id="youPass" class="login-password-input" maxlength="20" autocomplete="off" required>
                                     </div>
                                     <button id="loginBtn"  class="login-btn" type="submit">로그인</button>
                                     <div>
                                         <span class="signin-desc">플레이어 포럼 회원이 아니세요?</span>
-                                        <a href="#"><span class="signin-btn">회원가입</span></a>
+                                        <a href="joinAgreement.php"><span class="signin-btn">회원가입</span></a>
                                     </div>
                                 </div>
                                 </fieldset>

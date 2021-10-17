@@ -33,36 +33,41 @@
             <article class="content-article">
                 <div class="signin">
                     <div class="signin-inner">
-                        <div class="signin-window">
-                            <h3 class="signin-title">회원 정보 입력</h3>
+                        <form name="signinForm" class="signin-window" action="joinSave.php" method="POST">
+                        <h3 class="signin-title">회원 정보 입력</h3>
                             <span class="signin-desc">입력 항목을 정확히 기입해 주세요</span>
                             <div>
                                 <div>
                                     <p class="signin-email-title">이메일</p>
-                                    <input class="signin-email-input" type="text">
+                                    <input type="email" name="youEmail" id="youEmail" class="signin-email-input singin" type="text" placeholder="email@adress.com" required>
                                 </div>
+                                <!-- input박스의 이메일 -->
                                 <div>
                                     <p class="signin-password-title">비밀번호</p>
-                                    <input class="signin-password-input" type="password" placeholder="8~16자 이내 영문, 숫자, 특수문자 조합">
+                                    <input type="password" name="youPass" id="youPass" class="signin-password-input singin" type="password" placeholder="8~16자 이내 영문, 숫자, 특수문자 조합" required>
                                 </div>
+                                <!-- input박스의 비밀번호 -->
                                 <div>
                                     <p class="signin-password-confirm-title">비밀번호 확인</p>
-                                    <input class="signin-password-confirm-input" type="password" placeholder="비밀번호 확인">
+                                    <input type="password" name="youPassC" id="youPassC" class="signin-password-confirm-input singin" type="password" placeholder="비밀번호 확인" required>
                                 </div>
+                                <!-- input박스의 비밀번호 확인 -->
                                 <div>
                                     <p class="signin-name-title">이름</p>
-                                    <input class="signin-name-input" type="text">
+                                    <input type="text" name="youName" id="youName" class="signin-name-input singin" type="text" placeholder="이름을 입력해주세요." required>
                                 </div>
+                                <!-- input박스의 이름 -->
                                 <div>
                                     <p class="signin-birthday-title">생년월일</p>
-                                    <input class="signin-birthday-input" type="text">
+                                    <input type="text" name="youBirth" id="youBirth" class="signin-birthday-input singin" type="text" placeholder="생년월일을 입력해주세요." required>
                                 </div>
-                                <div class="sign-btn">
-                                    <button class="signin-cancel-btn">취소</button>
-                                    <button class="signin-btn">회원가입</button>    
+                                <!-- input박스의 생년월일 -->
+                                <div class="s-btn">
+                                    <a href="../pages/main.php" class="signin-cancel-btn"><span>취소</span></a>
+                                    <button class="signin-btn" type="submit">회원가입</button>    
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </article>

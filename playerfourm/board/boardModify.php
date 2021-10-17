@@ -38,14 +38,20 @@
                     <p class="content-title">수정하기</p>
                     <div class="board-write">
                         <form action="boardWriteSave.php" name="boardWrite" method="post">
-                            <div>
-                                <label for="boardTitle"><h2>제목</h2></label>
-                                <input type="text" id="boardTitle" name="boardTitle" class="title-text" placeholder="제목을 입력해주세요!" required autofocus>
-                            </div>
-                            <div>
-                                <label for="boardContent"><h2>내용</h2></label>
-                                <textarea name="boardContent" id="boardContent" rows="17" class="title-text" placeholder="내용을 작성해주세요!" required></textarea>
-                            </div>
+                            <?php
+                                $boardID = $_GET['boardID'];
+                                $sql = "SELECT b.boardTitle, b.boardContent, m.youName FROM aBoard b JOIN aMember m ON(b.aMemberID = m.aMemberID) WHERE b.aBoardID = {$boardID}";
+                                $result = $connect -> query($sql);
+                                if($result) {
+                                    $info = $result -> fetch_array(MYSQLI_ASSOC);
+                                    // echo "<div style='display:none'><label for='boardID'>번호</label>";
+                                    // echo "<input type='text' name='boardID' id='boardID' value='".$boardID."'></div>";
+                                    echo "<div><label for='boardTitle'><h2>제목</h2></label>";
+                                    echo "<input type='text' class='title-text' name='boardTitle' id='boardTitle' value='".$info['boardTitle']."'></div>";
+                                    echo "<div><label for='boardContent'>내용</label>";
+                                    echo "<textarea type='text' class='title-text' name='boardContent' id='boardContent' row='17'>".$info['boardContent']."</textarea></div>";
+                                }
+                            ?>
                             <button class="image-btn" type="submit" value="이미지첨부">이미지 첨부</button>
                             <button class="board-btn" type="submit" value="저장하기">저장하기</button>
                         </form>

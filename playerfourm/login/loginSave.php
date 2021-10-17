@@ -32,6 +32,7 @@
 <?php
     include "../connect/connect.php";
     include "../connect/session.php";
+
     $youEmail = $_POST['youEmail'];
     $youPass = $_POST['youPass'];
     
@@ -59,9 +60,7 @@
             $_SESSION['aMemberID'] = $memberInfo['aMemberID'];
             $_SESSION['youEmail'] = $memberInfo['youEmail'];
             $_SESSION['youName'] = $memberInfo['youName'];
-            // echo "<pre>";
-            // var_dump($memberInfo);
-            // echo "</pre>";
+
             Header("Location: ../pages/main.php");
         }
     } else {

@@ -8,7 +8,7 @@
     $connect -> set_charset("utf8");
 
     if( mysqli_connect_errno()){
-        // echo "Database Connect False";
+        // echo "Database Connect Fales";
     } else {
         //echo "Database Connect True";
     }

@@ -37,14 +37,14 @@
                         <div class="box-wrap">
                             <div class="checkbox1">
                                 <span>이용약관</span>
-                                <input type="checkbox" class="agree1">
+                                <input type="checkbox" name="agree1" class="agree1" onClick="agreeCheckCount(event)">
                             </div>
                             <div class="terms-wrap">
                                 <div class="terms-box">
                                     <div class="terms-inner">
                                         <p>제1장 총칙
                                             제1조 목적
-                                            이 이용약관(이하 '약관'이라 합니다)은 한화이글스(이하 '회사'라 합니다)와 이용 고객(이하'회원' 또는 '이용자'라 합니다.)간에 회사가 제공하는 홈페이지 서비스(http://www.hanwhaeagles.co.kr) 이하 '홈페이지' 또는 '서비스'라 합니다)의 가입조건 및 이용에 관한 제반 사항과 기타 필요한 사항을 구체적으로 규정함을 목적으로 합니다.
+                                            이 이용약관(이하 '약관'이라 합니다)은 플레이포럼(이하 '회사'라 합니다)와 이용 고객(이하'회원' 또는 '이용자'라 합니다.)간에 회사가 제공하는 홈페이지 서비스(http://www.hanwhaeagles.co.kr) 이하 '홈페이지' 또는 '서비스'라 합니다)의 가입조건 및 이용에 관한 제반 사항과 기타 필요한 사항을 구체적으로 규정함을 목적으로 합니다.
                                             
                                             회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.
                                             
@@ -181,12 +181,12 @@
                         <div class="box-wrap">
                             <div class="checkbox2">
                                 <span>개인정보 수집 및 이용에 관한 안내</span>
-                                <input type="checkbox" class="agree1">
+                                <input type="checkbox" name="agree1" class="agree1" onClick="agreeCheckCount(event)">
                             </div>
                             <div class="terms-wrap">
                                 <div class="terms-box">
                                     <div class="terms-inner">
-                                        <p>(주)’한화이글스' 는 (이하 '회사'는) 회원님의 개인정보를 중요시하며, "정보통신망이용촉진 및 정보보호 등 에 관한 법률”과 개인정보보호법 등 관련 법령 및 기준에 따라 회원의 동의를 얻어야 합니다.
+                                        <p>(주)’플레이포럼' 는 (이하 '회사'는) 회원님의 개인정보를 중요시하며, "정보통신망이용촉진 및 정보보호 등 에 관한 법률”과 개인정보보호법 등 관련 법령 및 기준에 따라 회원의 동의를 얻어야 합니다.
                 
                                             1. 개인정보의 수집 및 이용목적
                                             회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.
@@ -232,14 +232,14 @@
                         <div class="box-wrap">
                             <div class="checkbox3">
                                 <span>개인정보 위탁에 대한 동의</span>
-                                <input type="checkbox" class="agree1">
+                                <input type="checkbox" name="agree1" class="agree1" onClick="agreeCheckCount(event)">
                             </div>
                             <div class="terms-wrap">
                                 <div class="terms-box">
                                     <div class="terms-inner">
                                         <p>개인정보 위탁에 대한 동의 내역
                                             제공받는자	이용목적	제공항목	보유 및 이용기간
-                                            한화시스템 주식회사	홈페이지/시스템 관리	회원번호,아이디,성명,회원등급,휴대폰번호,이메일,생년월일,성별,CI	회원 탈퇴 시
+                                            플레이포럼 주식회사	홈페이지/시스템 관리	회원번호,아이디,성명,회원등급,휴대폰번호,이메일,생년월일,성별,CI	회원 탈퇴 시
                                             케이엔코리아	회원 상품 발송	이름,연락처,주소 등 배송정보	처리 후 즉시(목적 달성 시)
                                             티켓링크	회원 모집 대행 및 티켓발권	회원번호,아이디,성명,회원등급,휴대폰번호,이메일,생년월일,성별,CI	목적 달성시 까지(시즌 종료 후)
                                             터치웍스	회원 마일리지 적립	성명 연락처 아이디 생년월일 성별	시즌종료 후
@@ -250,8 +250,8 @@
                             </div>
                         </div>
                         <div class="btn-wrap">
-                            <div class="prev"><a href="#">되돌아가기</a></div>
-                            <div class="agreement"><a href="#">약관동의</a></div>
+                            <div class="prev"><a href="login.php">되돌아가기</a></div>
+                            <div class="agreement"><a>약관동의</a></div>
                         </div>
                     </div>
                 </div>
@@ -266,5 +266,20 @@
         ?>
     </footer>
     <!-- //footer -->
+    <script>
+        //체크박스 체크여부 확인
+        function agreeCheckCount(){
+            let agree = document.getElementsByName("agree1");
+            let agreeCheck = "input[name='agree1']:checked";
+            let agreeCheckElements = document.querySelectorAll(agreeCheck);
+            let agreeCount = agreeCheckElements.length;
+
+            if(agreeCount==3){
+                document.querySelector(".agreement a").setAttribute('href', 'join.php');
+            } else {
+                document.querySelector(".agreement a").removeAttribute('href', 'join.php');
+            };
+        };
+    </script>
 </body>
 </html>

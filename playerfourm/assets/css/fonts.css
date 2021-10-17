@@ -1,4 +1,8 @@
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 
+.hanna * {
+ font-family: 'Hanna', fantasy;
+}
 /* 에스코어드림 */
 @font-face {
     font-family: 'S-CoreDream';

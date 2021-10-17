@@ -1,6 +1,8 @@
 <?php 
     include "../connect/connect.php";
     include "../connect/session.php";
+    include "../connect/sessionCheck.php";
+    define('WP_DEBUG_DISPLAY', false);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -37,7 +39,7 @@
                     <?php
                         $boardID = $_GET['boardID'];
 
-                        $sql = "SELECT b.boardTitle, b.boardContent, b.boardView, m.youName, b.regTime FROM aBoard b JOIN aMember m ON(b.aMemberID = m.aMemberID) WHERE b.aBoardID = {$boardID}";
+                        $sql = "SELECT b.boardTitle, b.boardContent, b.boardView, m.youName, b.regTime, b.aMemberID FROM aBoard b JOIN aMember m ON(b.aMemberID = m.aMemberID) WHERE b.aBoardID = {$boardID}";
                         $result = $connect -> query($sql);
 
                         $view = "UPDATE aBoard SET boardView = boardView+1 WHERE aBoardID = {$boardID}";
@@ -53,23 +55,48 @@
                                 echo "<div class='board-view'><span>조회수</span><span>".$info['boardView']."</span></div>";
                             echo "</div>";   
 
+                            try {
+                                //  데이터베이스연결 ***/
+                                $dbh = new PDO("mysql:host=localhost;dbname=rlozib3712", 'rlozib3712', 'j65023genie#');
+                            
+                                //  에러익셉션 추가 ***/
+                                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            
+                                //  sql문 ***/
+                                $sql = "SELECT image, image_type FROM aBoardImg WHERE aBoardID=$boardID";
+                            
+                                ///  준비 ***/
+                                $stmt = $dbh->prepare($sql);
+                            
+                                // exceute the query
+                                $stmt->execute();
+                                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                                $array = $stmt->fetch();
 
-                            $result = $connect -> query($sql);
-                            if($result) {
-                                $count = $result -> num_rows;
-                                if ($count > 0) {
-                                    for($i=1; $i<=$count; $i++) {
-                                        $info = $result -> fetch_array(MYSQLI_ASSOC);
-                                        echo "<div class='board-info'><div class='img'><img src='../assets/img/img.jpg' alt='이미지'></div><p class='desc height'>".$info['boardContent']."</p>";
-                                    }
+                                // 이미지를 성공적으로가져오
+                                if($array != null) {
+                                    echo "<div class='board-info'><div class='img'><img src='data:".$array['image_type'].";base64,".base64_encode( $array['image'] )."' alt='이미지'></div>";
+                                } else {
+                                    echo "<div class='board-info'><div class='img none'><img src='#' alt='이미지'></div>";
                                 }
-                            } else {
-                                echo "false";
+                            } catch(PDOException $e) {
+                                echo $e->getMessage();
+                            } catch(Exception $e) {
+                                echo $e->getMessage();
                             }
-
-                            //echo "<div class='board-info'><div class='img'><img src='../assets/img/img.jpg' alt='이미지'></div><p class='desc height'>".$info['boardContent']."</p>";
+                                echo "<p class='desc height'>".$info['boardContent']."</p>";
                                 echo "<div class='btn'>";
-                                    echo "<a href='boardModify.php?boardID=<?=".$_GET['boardID']."?>'>수정하기</a>";
+                                    //현재 멤버아이디체크
+                                    $memberID = $_SESSION['aMemberID'];
+                                    //작성자 멤버아이디체크
+                                    $writer = $info['aMemberID'];
+                                    // 멤버아이디가 일치할시
+                                    if($memberID == $writer) {
+                                        echo "<a href='boardModify.php?boardID=<?=".$_GET['boardID']."?>'>수정하기</a>";
+                                    // 멤버아이디가 불일치할시
+                                    } else {
+                                        echo "<a class='none' href='boardModify.php?boardID=<?=".$_GET['boardID']."?>'>수정하기</a>";
+                                    }
                                     echo "<a href='boardRemove.php?boardID=<?=".$_GET['boardID']."?>' onclick='confirm('정말삭제하시겠습니까?')'>삭제하기</a>";
                                     echo "<a href='board.php'>목록보기</a>";
                                 echo "</div>";
@@ -77,35 +104,7 @@
                         echo "</div>";
                         }
                     ?>
-                    
-                    <!-- <p class="content-title">옥상으로 따라와</p>
-                    <div class="board mt20">
-                        <div class="board-haed">
-                            <div class="board-writer">
-                                <span>작성자</span>
-                                <span>작성자</span>
-                            </div>
-                            <div class="board-date">
-                                <span>작성일</span>
-                                <span>작성일</span>
-                            </div>
-                            <div class="board-view">
-                                <span>조회수</span>
-                                <span>조회수</span>
-                            </div>
-                        </div>
-                        <div class="board-info">
-                            <div class="img"><img src="../assets/img/img.jpg" alt="이미지"></div>
-                            <p class="desc">2019-20 프리시즌 투어에 참가해 좋은 모습을 보여주며 많은 구너들의 기대를 받고있다.
-                            2019년 9월 19일 아인트라흐트 프랑크푸르트와의 유로파 리그 조별리그 1차전에 선발 출전하여 전반전 윌록의 득점을 어시스트 했고
-                            후반전 엄청난 왼발 중거리 슛으로 팀의 2번째 골을 성공시켰다. 바로 이후에 강력한 전방압박과 원터치 패스로 오바메양의 득점을 도왔다. 3개의 득점에 모두 관여하였다.</p>
-                            <div class="btn">
-                                <a href="boardModify.php?boardID=<?=$_GET['boardID']?>">수정하기</a>
-                                <a href="boardRemove.php?boardID=<?=$_GET['boardID']?>" onclick="confirm('정말삭제하시겠습니까?')">삭제하기</a>
-                                <a href="board.php">목록보기</a>
-                            </div>
-                        </div>
-                    </div> -->
+                
                 </div>
             </article>
         </section>

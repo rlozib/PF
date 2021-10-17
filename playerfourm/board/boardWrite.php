@@ -37,7 +37,19 @@
                 <section class="boardType">
                     <p class="content-title">글쓰기</p>
                     <div class="board-write">
-                        <form action="boardWriteSave.php" name="boardWrite" method="post">
+                        <form action="boardWriteSave.php" name="boardWrite" method="post" enctype="multipart/form-data">
+                            <?php
+                                $boardID = $_GET['boardID'];
+
+                                $sql = "SELECT MAX(aBoardID) AS max_id FROM aBoard";
+                                $result = $connect -> query($sql);
+                                
+                                if($result){
+                                    $info = $result -> fetch_array(MYSQLI_ASSOC);
+                                    $max = (int)$info['max_id'];
+                                    echo "<input type='hidden' name='max_id' value ='$max'>";
+                                }
+                            ?>
                             <div>
                                 <label for="boardTitle"><h2>제목</h2></label>
                                 <input type="text" id="boardTitle" name="boardTitle" class="title-text" placeholder="제목을 입력해주세요!" required autofocus>
@@ -46,8 +58,8 @@
                                 <label for="boardContent"><h2>내용</h2></label>
                                 <textarea name="boardContent" id="boardContent" rows="17" class="title-text" placeholder="내용을 작성해주세요!" required></textarea>
                             </div>
-                            <button class="image-btn" type="submit" value="이미지첨부">이미지 첨부</button>
-                            <button class="board-btn" type="submit" value="저장하기">저장하기</button>
+                            <input class="image-btn" type="file" name="b_file" size="100" value="이미지첨부"></input>
+                            <input class="board-btn" type="submit" value="저장하기"></input>
                         </form>
                     </div>
                 </section>
