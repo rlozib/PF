@@ -1356,34 +1356,6 @@ footer .footer-inner .copyright {
 
 /* ---------------------------------------------------- 선수 페이지 ---------------------------------------------------- */
 /* ---------------------------------------------------- 모달 페이지 ---------------------------------------------------- */
-/* .info {
-    color: #fff;
-    font-family: "NEXONLv1Gothic";
-    padding: 20px;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.info {
-    top: auto;
-    left: auto;
-    bottom: 0;
-    right: 0;
-}
-.info button {
-    background: transparent;
-    border: 1px solid #fff;
-    padding: 5px 20px;
-    color: #fff;
-    border-radius: 50px;
-    box-shadow: 0 0 0 #fff inset;
-    transition: all 0.4s;
-    cursor: pointer;
-}
-.info button:hover {
-    box-shadow: 0 -50px #fff inset;
-    color: #000;
-}
 #modal {
     position: fixed;
     left: 0;
@@ -1413,68 +1385,67 @@ footer .footer-inner .copyright {
     float: right;
     border: 1px solid #000;
     background: #000;
-    border-radius: 20px;
+    border-radius: 50px;
     color: #fff;
-    padding: 5px 10px;
+    padding: 5px 12px;
     cursor: pointer;
-    font-family: "NEXONLv2Gothic";
-    margin-top: 20px;
+    margin-top: 15px;
 }
-  
+
 #modal.show {
     -webkit-animation: unfoldIn 1s ease forwards;
             animation: unfoldIn 1s ease forwards;
 }
-  
+
 @-webkit-keyframes unfoldIn {
     0% {
-      transform: scaley(0.005) scalex(0);
+        transform: scaley(0.005) scalex(0);
     }
     50% {
-      transform: scaley(0.005) scalex(1);
+        transform: scaley(0.005) scalex(1);
     }
     100% {
-      transform: scaley(1) scalex(1);
+        transform: scaley(1) scalex(1);
     }
 }
-  
+
 @keyframes unfoldIn {
     0% {
-      transform: scaley(0.005) scalex(0);
+        transform: scaley(0.005) scalex(0);
     }
     50% {
-      transform: scaley(0.005) scalex(1);
+        transform: scaley(0.005) scalex(1);
     }
     100% {
-      transform: scaley(1) scalex(1);
+        transform: scaley(1) scalex(1);
     }
 }
 #modal.show.hide {
     -webkit-animation: unfoldOut 1s ease forwards;
-            animation: unfoldOut 1s ease forwards;
+            animation: unfoldOut 1s ease forwards;  
 }
-  
+
 @-webkit-keyframes unfoldOut {
     0% {
-      transform: scaley(1) scalex(1);
+        transform: scaley(1) scalex(1);
     }
     50% {
-      transform: scaley(0.005) scalex(1);
+        transform: scaley(0.005) scalex(1);
     }
     100% {
-      transform: scaley(0.005) scalex(0);
+        transform: scaley(0.005) scalex(0);
     }
 }
-  
+
 @keyframes unfoldOut {
     0% {
-      transform: scaley(1) scalex(1);
+        transform: scaley(1) scalex(1);
     }
     50% {
-      transform: scaley(0.005) scalex(1);
+        transform: scaley(0.005) scalex(1);
     }
     100% {
-      transform: scaley(0.005) scalex(0);
+        transform: scaley(0.005) scalex(0);
     }
 }
 #modal.show .modal-bg .modal-cont {
@@ -1482,79 +1453,60 @@ footer .footer-inner .copyright {
     -webkit-animation: zoomIn 0.5s 0.8s ease forwards;
             animation: zoomIn 0.5s 0.8s ease forwards;
 }
-  
+
 #modal.show.hide .modal-bg .modal-cont {
     transform: scale(0);
     -webkit-animation: zoomOut 0.5s ease forwards;
             animation: zoomOut 0.5s ease forwards;
 }
-  
+
 @-webkit-keyframes zoomIn {
     0% {
-      transform: scale(0);
+        transform: scale(0);
     }
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
 }
-  
+
 @keyframes zoomIn {
     0% {
-      transform: scale(0);
+        transform: scale(0);
     }
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
 }
 @-webkit-keyframes zoomOut {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
     100% {
-      transform: scale(0);
+        transform: scale(0);
     }
 }
 @keyframes zoomOut {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
     100% {
-      transform: scale(0);
+        transform: scale(0);
     }
 }
 .profile-view {
-    background: #fff;
-    width: 60vw;
-    border: 1px solid #f2f2f2;
+    background: #373839;
+    width: 50vw; 
+    height: 70vh;
+    /* border: 1px solid #f2f2f2; */
     border-radius: 10px;
     overflow: hidden;
 }
 .profile-view .view-header {
     border-bottom: 1px solid #f2f2f2;
 }
-.profile-view .view-header .dot {
-    padding: 13px 10px 10px 15px;
-}
-.profile-view .view-header .dot span {
-    width: 12px;
-    height: 12px;
-    display: inline-block;
-    border-radius: 50%;
-    margin: 0 2px;
-}
-.profile-view .view-header .dot span:nth-child(1) {
-    background-color: #f56565;
-}
-.profile-view .view-header .dot span:nth-child(2) {
-    background-color: #f6e05e;
-}
-.profile-view .view-header .dot span:nth-child(3) {
-    background-color: #48bb78;
-}
 .profile-view .view-title {
-    border-bottom: 1px solid #f2f2f2;
+    /* border-bottom: 1px solid #f2f2f2; */
     padding: 0 11px;
-    font-family: "NEXONLv2Gothic";
 }
 .profile-view .view-title li {
     display: inline;
@@ -1566,54 +1518,48 @@ footer .footer-inner .copyright {
     padding: 10px 10px 12px;
     margin: 0 5px;
     display: inline-block;
-}
-.profile-view .view-title li.active a {
-    border-top: 2px solid #667EEA;
-    color: #4a5568;
+    font-size: 30px;
+    font-weight: 500;
 }
 .profile-view .view-cont {
-    height: 70vh;
-    overflow-y: scroll;
-    background: #F8F8F9;
+    /* width: 80vw; */
+    height: 28vw;
+    background: #373839;
+    font-weight: 400;
+    font-size: 20px;
+    position: relative;
+    margin-left: 80px;
+    margin-right: 80px;
 }
-.profile-view .view-cont > div {
-    display: none;
+.profile-view .view-cont  .profile_wrap {
 }
-.profile-view .view-cont > div:nth-child(1) {
-    display: block;
-} */
+.profile-view .view-cont .profile_photo {
+    width: 50%;
+    float: left;
+}
+.profile-view .view-cont .profile_photo img {
+    margin-right: 20px;
+}
+.profile-view .view-cont .profile_ability {
+    width: 44%;
+    float: right;
+}
+.profile-view .view-cont .profile_ability img {
 
-/* profile view */
-/* .profile-view {
-    background: #fff;
-	width: 60vw;
-	border: 1px solid #f2f2f2;
-	border-radius: 10px;
-	overflow: hidden;
 }
-.profile-view .view-header {
-    border-bottom: 1px solid #f2f2f2;
-}
-.profile-view .view-title {
-    border-bottom: 1px solid #f2f2f2;
-    padding: 0 11px;
-}
-.profile-view .view-title li {
-    display: inline;
-    list-style: none;
-}
-.profile-view .view-title a {
-    text-decoration: none;
-    color: #ccc;
-    padding: 10px 10px 12px;
-    margin: 0 5px;
+.profile-view .view-cont .profile_info {
     display: inline-block;
+    padding-bottom: 30px;
 }
-.profile-view .view-cont {
-    height: 70vh;
-    overflow-y: scroll;
-    background: #F8F8F9;
-} */
+.profile-view .view-cont .profile_info .key {
+    display: inline-block;
+    margin-bottom: -25px;
+}
+.profile-view .view-cont .profile_info .value {
+    position: relative;
+    margin-left: 150px;
+    top: -28px;
+}
 /* ---------------------------------------------------- 모달 ---------------------------------------------------- */
 /* ---------------------------------------------------- 랭킹 ---------------------------------------------------- */
 .rankingWrap {
